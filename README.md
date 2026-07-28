@@ -1,6 +1,6 @@
 # Insider Threat Detection (Typing-based)
 
-A small research/demo project that uses typing biometrics and keystroke logging to detect anomalous or suspicious typing behavior. Includes a Streamlit dashboard for user/admin views, simple typing-profile registration and verification scripts, and a keystroke logger for collecting raw key events.
+A small research/demo project that uses typing biometrics and keystroke logging to detect anomalous or suspicious typing behavior. Includes a Streamlit dashboard for user/admin views, simple typing-pr...
 
 ## Table of contents
 
@@ -18,14 +18,13 @@ A small research/demo project that uses typing biometrics and keystroke logging 
 - Register users and verify typing sessions against stored profiles (anomaly detection).
 - Keystroke logger that writes hold times and timestamps to `k.csv`.
 - Streamlit dashboard with separate Admin and User views, and logging of typing-test results to a local SQLite DB.
-- Optional Zapier webhook alerts for suspicious activity (configured by default to a webhook URL present in the code).
 
 ## Repository structure
 
 - `continuous_auth.py` — CLI script to collect typing samples and save a simple profile (hold/flight statistics).
-- `typing_auth.py` — Registration and verification flow using more features (key latencies, error rate, simple IsolationForest anomaly detection). Sends Zapier alerts on anomalies.
+- `typing_auth.py` — Registration and verification flow using more features (key latencies, error rate, simple IsolationForest anomaly detection). Can send alerts on anomalies.
 - `keystroke_logger.py` — Low-level key capture that logs each key's hold time to `k.csv` next to the script. Stops on Esc.
-- `dashboard.py` — Streamlit app (Admin/User) that stores users and typing test results in `users.db` and can send Zapier alerts for high/critical suspicion.
+- `dashboard.py` — Streamlit app (Admin/User) that stores users and typing test results in `users.db` and can send alerts for high/critical suspicion.
 - `SETUP_NOTES.md` — Important repository-specific setup and notes (cleanup performed, file name fixes, OS/permission notes).
 - `requirements.txt` — Python dependencies used by the project.
 
@@ -74,13 +73,13 @@ User workflow: Sign up or register a username, go to User Dashboard → Start Te
 - This project uses `pynput` to capture keyboard events. Run these scripts only on machines you own and understand: keystroke capture is sensitive and can be misused.
 - On macOS you must grant "Input Monitoring" / Accessibility permission to the terminal or IDE used to run the scripts.
 - On some Linux distributions capturing global input requires root privileges.
-- The repository includes a hardcoded Zapier webhook URL used to send alert POSTs from `typing_auth.py` and `dashboard.py`. Replace `ZAPIER_WEBHOOK_URL` in the scripts if you want to use your own webhook.
+- The code contains a hardcoded webhook URL used to send alert POSTs from `typing_auth.py` and `dashboard.py`. Replace the webhook URL in the scripts if you want to use your own.
 - `dashboard.py` stores users and typing logs in `users.db` (SQLite) in the working directory. Treat this as sensitive data.
 - The project is a demo/proof-of-concept and not intended for production use. Do not deploy key-logging code on production systems.
 
 ## Customization
 
-- To change the Zapier webhook, update `ZAPIER_WEBHOOK_URL` near the top of `typing_auth.py` and `dashboard.py`.
+- To change the webhook URL, update it near the top of `typing_auth.py` and `dashboard.py`.
 - To change the sample text or number of samples, edit `SAMPLE_TEXTS`, `VERIFICATION_TEXT`, and `NUM_SAMPLES` in `typing_auth.py` (or SAMPLE_TEXT in `continuous_auth.py`).
 - The anomaly decision threshold is defined by `ANOMALY_THRESHOLD` in `typing_auth.py`.
 
@@ -98,5 +97,5 @@ This project is provided as-is for research/demo purposes. No license file is in
 
 If you'd like, I can also:
 - add a CONTRIBUTING.md or LICENSE file,
-- parameterize the Zapier webhook into an environment variable,
+- parameterize any webhook URL into an environment variable,
 - or split the dashboard DB initialization into a separate setup script.
