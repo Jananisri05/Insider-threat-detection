@@ -68,6 +68,16 @@ streamlit run dashboard.py
 
 User workflow: Sign up or register a username, go to User Dashboard → Start Test → type and Submit. Admins can view `Admin Dashboard` to see recent typing test results.
 
+##Results
+Register
+<img width="1805" height="912" alt="image" src="https://github.com/user-attachments/assets/38f3f213-afd6-4599-b189-1d2ca03f9e75" />
+Verify
+<img width="1666" height="952" alt="image" src="https://github.com/user-attachments/assets/4e0ee8fe-648c-4d5f-ab46-b39d138d2ac5" />
+Dashboard
+<img width="1807" height="857" alt="image" src="https://github.com/user-attachments/assets/8941cb6c-8c80-4f08-866a-374fbb369616" />
+<img width="1887" height="806" alt="image" src="https://github.com/user-attachments/assets/0b910728-ef4a-4fcd-9647-13e2294e4da9" />
+<img width="1892" height="956" alt="image" src="https://github.com/user-attachments/assets/e3402223-8711-4aed-8e10-847302f7133b" />
+
 ## Important notes & security
 
 - This project uses `pynput` to capture keyboard events. Run these scripts only on machines you own and understand: keystroke capture is sensitive and can be misused.
@@ -92,6 +102,7 @@ User workflow: Sign up or register a username, go to User Dashboard → Start Te
 ## License
 
 This project is provided as-is for research/demo purposes. No license file is included; if you want a permissive license added (MIT/Apache2), open an issue or submit a PR.
+
 
 ---
 
