@@ -74,7 +74,6 @@ Register
 Verify
 <img width="1666" height="952" alt="image" src="https://github.com/user-attachments/assets/4e0ee8fe-648c-4d5f-ab46-b39d138d2ac5" />
 Dashboard
-<img width="1807" height="857" alt="image" src="https://github.com/user-attachments/assets/8941cb6c-8c80-4f08-866a-374fbb369616" />
 <img width="1887" height="806" alt="image" src="https://github.com/user-attachments/assets/0b910728-ef4a-4fcd-9647-13e2294e4da9" />
 <img width="1892" height="956" alt="image" src="https://github.com/user-attachments/assets/e3402223-8711-4aed-8e10-847302f7133b" />
 
