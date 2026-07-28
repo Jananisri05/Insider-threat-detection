@@ -1,0 +1,9 @@
+pynput
+numpy
+scikit-learn
+streamlit
+plotly
+pandas
+pillow
+bcrypt
+requests
