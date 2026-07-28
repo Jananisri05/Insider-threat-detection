@@ -68,7 +68,7 @@ streamlit run dashboard.py
 
 User workflow: Sign up or register a username, go to User Dashboard → Start Test → type and Submit. Admins can view `Admin Dashboard` to see recent typing test results.
 
-##Results
+## Results
 Register
 <img width="1805" height="912" alt="image" src="https://github.com/user-attachments/assets/38f3f213-afd6-4599-b189-1d2ca03f9e75" />
 Verify
